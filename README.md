@@ -1,5 +1,7 @@
 # Spring Security Kotlin Suspend Cacheable Reproduction
 
+https://github.com/spring-projects/spring-security/issues/19400
+
 Minimal reproduction for a `ClassCastException` when these three pieces are combined:
 
 - Spring WebFlux with Kotlin `suspend` controller methods
