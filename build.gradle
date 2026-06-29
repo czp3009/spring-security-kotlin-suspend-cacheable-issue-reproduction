@@ -1,0 +1,33 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import org.springframework.boot.gradle.plugin.SpringBootPlugin
+
+plugins {
+    id "org.jetbrains.kotlin.jvm" version "2.4.0"
+    id "org.jetbrains.kotlin.plugin.spring" version "2.4.0"
+    id "org.springframework.boot" version "4.1.0"
+}
+
+group = "com.example"
+version = "0.0.1-SNAPSHOT"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation platform(SpringBootPlugin.BOM_COORDINATES)
+    implementation "org.springframework.boot:spring-boot-starter-cache"
+    implementation "org.springframework.boot:spring-boot-starter-security"
+    implementation "org.springframework.boot:spring-boot-starter-webflux"
+    implementation "org.jetbrains.kotlin:kotlin-reflect"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-reactor"
+}
+
+kotlin {
+    jvmToolchain(21)
+    compilerOptions {
+        javaParameters = true
+        jvmTarget = JvmTarget.JVM_21
+    }
+}
